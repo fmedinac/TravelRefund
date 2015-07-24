@@ -14,10 +14,12 @@
 -               components[folder] = {}
 -               components[folder].hasCSS = false
 -               components[folder].hasJS = false
+-               components[folder].hasJSX = false
 -               components[folder].partial = pathPrefix + 'components/' + folder + '/_html'
 -               components[folder].baseSource = 'components/' + folder + '/'
 -               if (contents.indexOf('style.css') !== -1) components[folder].hasCSS = true
 -               if (contents.indexOf('script.js') !== -1) components[folder].hasJS = true
+-               if (contents.indexOf('script.jsx') !== -1) components[folder].hasJSX = true
 -           }
 -       }
 -   }

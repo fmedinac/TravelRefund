@@ -10,6 +10,10 @@ html
         link(href='/assets/styles/vendor/flexboxgrid.css', rel='stylesheet')
         link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Poiret+One', rel='stylesheet')
         link(href='/assets/styles/harplyss.css', rel='stylesheet')
+
+        script(src="/assets/scripts/vendor/react/react.js")
+        script(src="/assets/scripts/vendor/react/JSXTransformer.js")
+
         if !process.env.PRODUCTION
             each module in components
                 - var stylesheet = componentsPath + module.baseSource + 'style.css'
@@ -30,6 +34,10 @@ html
                     - var script = componentsPath + module.baseSource + 'script.js'
                     if module.hasJS
                         script(src=script)
+
+                    - var scriptX = componentsPath + module.baseSource + 'script.jsx'
+                    if module.hasJSX
+                        script(src=scriptX, type="text/jsx")
 
             if process.env.PRODUCTION
                 - var script = componentsPath + 'assets/scripts/build.js'
